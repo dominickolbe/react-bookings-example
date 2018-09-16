@@ -1,0 +1,13 @@
+{
+  "name": "react-bookings-example",
+  "version": "0.1.0",
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "react-scripts": "1.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  }
+}
