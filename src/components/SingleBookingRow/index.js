@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
+import pendingSVG from './pending.svg';
+import confirmedSVG from './confirmed.svg';
 
 const RowContainer = styled.div`
   display: flex;
@@ -11,11 +13,34 @@ const RowContainer = styled.div`
     border-bottom: 1px solid #D9DBDE;
   }
 
-  img {
-    border-radius: 100%;
+  .image {
+    position: relative;
     height: 40px;
     margin-right: 15px;
     width: 40px;
+
+    img {
+      border-radius: 100%;
+      width: 100%;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 20px;
+      width: 20px;
+      position: absolute;
+      bottom: -5px;
+      right: -5px;
+    }
+    &.pending:after {
+      background-image: url(${pendingSVG});
+    }
+    &.confirmed:after {
+      background-image: url(${confirmedSVG});
+    }
   }
 
   .name {
@@ -44,7 +69,11 @@ const RowContainer = styled.div`
 
 const SingleBookingRow = ({ id, name, time, status, onClick }) => (
   <RowContainer>
-    <img src={`https://randomuser.me/api/portraits/lego/${id}.jpg`} />
+    <div
+      className={status === 1 ? 'image pending' : 'image confirmed'}
+    >
+      <img src={`https://randomuser.me/api/portraits/lego/${id}.jpg`} />
+    </div>
     <div className="name">{name}</div>
     <div className="time">{moment(time).format('ddd DD MMM, hh:mm a')}</div>
     <button
