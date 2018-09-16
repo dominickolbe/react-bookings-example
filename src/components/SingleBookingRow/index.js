@@ -23,23 +23,31 @@ const RowContainer = styled.div`
   }
 
   button {
-    background: #3182EC;
+    background: #FFF;
     border-radius: 5px;
-    color: white;
+    border: 1px solid #3182EC;
+    color: #3182EC;
+    cursor: pointer;
     height: 30px;
     font-size: 14px;
     margin-left: auto;
     text-align: center;
+    transition: all 200ms ease;
     width: 100px;
+
+    &.active, &:hover {
+      background: #3182EC;
+      color: white;
+    }
   }
 `;
 
-const SingleBookingRow = ({ id, name, time }) => (
+const SingleBookingRow = ({ id, name, time, status }) => (
   <RowContainer>
     <img src={`https://randomuser.me/api/portraits/lego/${id}.jpg`} />
     <div className="name">{name}</div>
     <div className="time">{moment(time).format('ddd DD MMM, hh:mm a')}</div>
-    <button>Accept</button>
+    <button className={status === 1 ? 'active' : ''}>{status === 1 ? 'Accept' : 'Cancel'}</button>
   </RowContainer>
 );
 
