@@ -43,9 +43,13 @@ class Bookings extends Component {
   }
 
   componentDidMount() {
-    this.setState({ bookings: this.props.bookings })
+    this.setState({ bookings: this.props.bookings });
   }
 
+  /*
+    Change status of a booking by ID, status will be increased by 1
+    -> status 1 = pending, status 2 = accepted, status 3 = canceled
+  */
   changeStatus(id) {
     const bookings = this.state.bookings;
     bookings.forEach(booking => {
@@ -76,7 +80,11 @@ class Bookings extends Component {
           </div>
         </BookingsContainerHeader>
         {list.map(booking => (
-          <SingleBookingRow key={booking.id} {...booking} onClick={() => this.changeStatus(booking.id)} />
+          <SingleBookingRow
+            key={booking.id}
+            onClick={() => this.changeStatus(booking.id)}
+            {...booking}
+          />
         ))}
       </BookingsContainer>
     );

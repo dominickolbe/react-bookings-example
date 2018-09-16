@@ -3,24 +3,24 @@ import Bookings from './components/Bookings';
 
 const tmpBookings = [{
   id: 1,
-  name: 'Kenneth L',
-  time: '2018-10-01T15:17:22.552Z',
+  name: 'Hannah',
+  time: '2018-10-01T15:17:04.552Z',
   status: 1, // pending
 }, {
   id: 2,
-  name: 'Kenneth L',
-  time: '2018-10-03T03:17:22.552Z',
-  status: 2, // accepted
+  name: 'Johnny',
+  time: '2018-10-03T03:14:10.552Z',
+  status: 1, // pending
 }, {
   id: 3,
-  name: 'Kenneth L',
-  time: '2018-10-03T03:17:22.552Z',
-  status: 2,
+  name: 'Thomas',
+  time: '2018-10-19T03:12:36.552Z',
+  status: 1, // pending
 }, {
   id: 4,
-  name: 'Kenneth L',
-  time: '2018-10-16T18:17:22.552Z',
-  status: 2,
+  name: 'Richard',
+  time: '2018-10-23T18:17:49.552Z',
+  status: 2, // accepted
 }];
 
 class App extends Component {
