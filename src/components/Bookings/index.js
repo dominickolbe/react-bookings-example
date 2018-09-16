@@ -37,41 +37,45 @@ class Bookings extends Component {
 
     this.state = {
       bookings: [],
+      status: 1,
     }
   }
 
   componentDidMount() {
-    this.filterBookings(1);
+    this.setState({ bookings: this.props.bookings })
   }
 
-  filterBookings(status) {
-    const bookings = this.props.bookings.filter(i => i.status === status);
-    this.setState({
-      bookings,
-      status,
+  changeStatus(id) {
+    const bookings = this.state.bookings;
+    bookings.forEach(booking => {
+      if (booking.id === id) {
+        booking.status++;
+      }
     });
+    this.setState({ bookings })
   }
 
   render() {
-    const { bookings, status } = this.state;
+    const { status, bookings } = this.state;
+    const list = bookings.filter(i => i.status === status);
     return (
       <BookingsContainer>
         <BookingsContainerHeader>
           <div
             className={status === 1 ? 'active' : ''}
-            onClick={() => this.filterBookings(1)}
+            onClick={() => this.setState({ status: 1 })}
           >
             Pending
           </div>
           <div
             className={status === 2 ? 'active' : ''}
-            onClick={() => this.filterBookings(2)}
+            onClick={() => this.setState({ status: 2 })}
           >
             Confirmed
           </div>
         </BookingsContainerHeader>
-        {bookings.map(booking => (
-          <SingleBookingRow key={booking.id} {...booking} />
+        {list.map(booking => (
+          <SingleBookingRow key={booking.id} {...booking} onClick={() => this.changeStatus(booking.id)} />
         ))}
       </BookingsContainer>
     );

@@ -42,12 +42,17 @@ const RowContainer = styled.div`
   }
 `;
 
-const SingleBookingRow = ({ id, name, time, status }) => (
+const SingleBookingRow = ({ id, name, time, status, onClick }) => (
   <RowContainer>
     <img src={`https://randomuser.me/api/portraits/lego/${id}.jpg`} />
     <div className="name">{name}</div>
     <div className="time">{moment(time).format('ddd DD MMM, hh:mm a')}</div>
-    <button className={status === 1 ? 'active' : ''}>{status === 1 ? 'Accept' : 'Cancel'}</button>
+    <button
+      className={status === 1 ? 'active' : ''}
+      onClick={onClick}
+    >
+      {status === 1 ? 'Accept' : 'Cancel'}
+    </button>
   </RowContainer>
 );
 
