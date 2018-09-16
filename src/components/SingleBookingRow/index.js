@@ -43,6 +43,11 @@ const RowContainer = styled.div`
     }
   }
 
+  .details {
+    display: flex;
+    flex-direction: row;
+  }
+
   .name {
     margin-right: 40px;
   }
@@ -58,11 +63,20 @@ const RowContainer = styled.div`
     margin-left: auto;
     text-align: center;
     transition: all 200ms ease;
-    width: 100px;
+    width: 90px;
 
     &.active, &:hover {
       background: #3182EC;
       color: white;
+    }
+  }
+
+  @media only screen and (max-width : 520px) {
+    .details {
+      flex-direction: column;
+    }
+    .time {
+      font-size: 12px;
     }
   }
 `;
@@ -74,8 +88,10 @@ const SingleBookingRow = ({ id, name, time, status, onClick }) => (
     >
       <img src={`https://randomuser.me/api/portraits/lego/${id}.jpg`} />
     </div>
-    <div className="name">{name}</div>
-    <div className="time">{moment(time).format('ddd DD MMM, hh:mm a')}</div>
+    <div className="details">
+      <div className="name">{name}</div>
+      <div className="time">{moment(time).format('ddd DD MMM, hh:mm a')}</div>
+    </div>
     <button
       className={status === 1 ? 'active' : ''}
       onClick={onClick}
