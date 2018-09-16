@@ -32,11 +32,21 @@ yarn start
 ```
 
 ## Testing
+tests are more or less useless, but I wanted to show how I'd write tests.
 
 ```
 yarn test
 ```
 
+## Booking object
+```
+{
+  id: 1,
+  name: 'Kenneth L',
+  time: '2018-10-03T03:17:22.552Z',
+  status: 1, // 1 = pending, 2 = accepted, 3 = canceled
+}
+```
 
 ---
 

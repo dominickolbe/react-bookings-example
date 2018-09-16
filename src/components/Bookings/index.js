@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import SingleBookingRow from '../SingleBookingRow';
+import { filterBookings } from '../../utils';
 
 const BookingsContainer = styled.div`
   background: white;
@@ -57,7 +58,7 @@ class Bookings extends Component {
 
   render() {
     const { status, bookings } = this.state;
-    const list = bookings.filter(i => i.status === status);
+    const list = filterBookings(bookings, status);
     return (
       <BookingsContainer>
         <BookingsContainerHeader>
