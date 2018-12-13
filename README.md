@@ -1,5 +1,9 @@
 # react-bookings-example
 
+## Screenshot
+
+<img src="screenshot.png" width="100%">
+
 
 ## Requirements
 I used the following installed versions to build this project:
