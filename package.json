@@ -2,7 +2,7 @@
   "name": "react-bookings-example",
   "version": "0.1.0",
   "dependencies": {
-    "moment": "^2.22.2",
+    "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.5",
