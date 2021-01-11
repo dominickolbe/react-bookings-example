@@ -7,6 +7,16 @@
 
 <img src="screenshot.png" width="100%">
 
+### Preview
+
+[see live version here](https://react-bookings-example.vercel.app)
+
+The current production build is served by [vercel.com](https://vercel.com)
+
+```http
+https://react-bookings-example.vercel.app
+```
+
 ## Getting Started
 
 ### Prerequisites
