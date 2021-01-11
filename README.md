@@ -1,41 +1,39 @@
-# react-bookings-example
+<p align="center">
+  <h3 align="center">react-bookings-example</h3>
+  <p align="center">simple and clean react-bookings-example<p>
+</p>
 
 ## Screenshot
 
 <img src="screenshot.png" width="100%">
 
+## Getting Started
 
-## Requirements
-I used the following installed versions to build this project:
+### Prerequisites
 
-- node v9.11.2
-- npm 5.6.0
-- yarn 1.9.4
-- macOS Hight Sierra 10.13.6
-- Google Chrome 69.0.3497.92 (Official Build) (64-bit)
+I build this entire project with the following setup:
 
-I prefer to use [node version manager](https://github.com/creationix/nvm) to manage different versions of nodejs on your computer
+- macOS Big Sur version 11.1
+- node v12.20.0
+- npm v6.14.8
+- yarn v1.22.10
+
+### Development
+
+```bash
+yarn install
 ```
-$ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-$ nvm install 9.11
-$ nvm use 9.11
-```
-
-Make sure all dependencies have been installed before moving on:
-
-```
-yarn
-// or
-npm install
-```
-
 
 ## Run project
-```
+
+4. start frontend application
+
+```bash
 yarn start
 ```
 
 ## Testing
+
 tests are more or less useless, but I wanted to show how I'd write tests.
 
 ```
@@ -43,6 +41,7 @@ yarn test
 ```
 
 ## Booking object
+
 ```
 {
   id: 1,
@@ -54,4 +53,4 @@ yarn test
 
 ---
 
-Copyright (c) 2018 [Dominic Kolbe](https://dominickolbe.dk)
+Copyright (c) 2018-2001 [Dominic Kolbe](https://dominickolbe.dk)
